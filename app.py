@@ -64,7 +64,8 @@ st.markdown("""
 2. Allow browser access the camera.
 3. **For Laptop:** will use default webcam .
 4. **For Phone:**
+   - Select Device.
    - Choose back or front camera.
-   - Happy Trying
 
 """)
+
