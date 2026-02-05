@@ -8,14 +8,12 @@ from ultralytics import YOLO
 st.set_page_config(page_title="Simple Web Based Object Detection", layout="centered")
 
 st.title("👁️ Simple Object Detection")
-st.caption("Deteksi objek menggunakan kamera Laptop atau HP via Browser")
+st.caption("Object Detection using Laptop or Phone camera via Browser")
 
 # --- Load Model ---
 # Menggunakan @st.cache_resource agar model tidak di-load ulang setiap ada interaksi
 @st.cache_resource
 def load_model():
-    # Pastikan file yolov10n.pt ada, atau ultralytics akan mencoba mendownloadnya
-    # Jika yolov10n belum stabil di library standar, bisa ganti ke 'yolov8n.pt' sebagai fallback
     return YOLO(r"dailyobjects.pt") 
 
 try:
@@ -61,14 +59,12 @@ webrtc_streamer(
 
 st.markdown("""
 ---
-### Cara Menggunakan:
-1. Klik tombol **START** di atas.
-2. Izinkan browser mengakses kamera.
-3. **Untuk Laptop:** Akan langsung menggunakan webcam default.
-4. **Untuk HP:**
-   - Pastikan Laptop dan HP terhubung ke **Wi-Fi yang sama**.
-   - Buka Command Prompt di laptop, ketik `ipconfig` (Windows) atau `ifconfig` (Mac/Linux) untuk melihat **IPv4 Address** laptop (misal: `192.168.1.5`).
-   - Jalankan streamlit dengan perintah: `streamlit run app.py --server.address 0.0.0.0`
-   - Buka browser di HP (Chrome/Safari), ketik alamat: `http://192.168.1.5:8501`.
-   - Klik Start di HP, dan pilih kamera (biasanya browser HP akan meminta izin akses kamera).
+### How to Use:
+1. Click **START** Button on top.
+2. Allow browser access the camera.
+3. **For Laptop:** will use default webcam .
+4. **For Phone:**
+   - Choose back or front camera.
+   - Happy Trying
+
 """)
